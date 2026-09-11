@@ -1,0 +1,53 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --bg-primary: #fbfbf9;
+    --card-bg: #ffffff;
+    --text-primary: #1e293b;
+    --text-muted: #64748b;
+    --border-color: #e2e8f0;
+  }
+
+  body {
+    font-family: 'Plus Jakarta Sans', 'Noto Sans Telugu', system-ui, -apple-system, sans-serif;
+    background-color: #fbfbf9;
+    color: #334155;
+  }
+
+  h1, h2, h3, h4, .font-display {
+    font-family: 'Outfit', 'Noto Sans Telugu', system-ui, sans-serif;
+  }
+}
+
+/* Eye-Friendly Glassmorphism with Soft Warmer Shadows */
+.glass-card {
+  background: rgba(255, 255, 255, 0.94);
+  backdrop-filter: blur(16px);
+  border: 1px solid #edece8;
+  box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.04), 0 2px 6px -1px rgba(0, 0, 0, 0.02);
+}
+
+.dark .glass-card {
+  background: rgba(30, 41, 59, 0.9);
+  border: 1px solid rgba(51, 65, 85, 0.8);
+}
+
+/* KaTeX equations: comfortable size and smooth horizontal scroll */
+.katex-display {
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding: 0.6rem 0;
+  margin: 0.5rem 0;
+}
+
+/* Eye-soothing focus rings */
+input:focus, textarea:focus, select:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(245, 158, 11, 0.2);
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}

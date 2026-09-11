@@ -1,0 +1,193 @@
+{
+  "total_queries": 161,
+  "queries_by_language": {
+    "en": 140,
+    "te": 21
+  },
+  "struggled_topics": [
+    {
+      "chapter": "Quadratic Equations",
+      "chapter_te": "వర్గ సమీకరణాలు",
+      "queries": 28,
+      "difficulty_rating": "High"
+    },
+    {
+      "chapter": "Real Numbers",
+      "chapter_te": "వాస్తవ సంఖ్యలు",
+      "queries": 51,
+      "difficulty_rating": "Medium"
+    },
+    {
+      "chapter": "Trigonometry",
+      "chapter_te": "త్రికోణమితి",
+      "queries": 16,
+      "difficulty_rating": "High"
+    },
+    {
+      "chapter": "Similar Triangles",
+      "chapter_te": "సరూప త్రిభుజాలు",
+      "queries": 9,
+      "difficulty_rating": "High"
+    },
+    {
+      "chapter": "Coordinate Geometry",
+      "chapter_te": "నిరూపక రేఖాగణితం",
+      "queries": 11,
+      "difficulty_rating": "Medium"
+    },
+    {
+      "chapter": "Progressions",
+      "chapter_te": "శ్రేఢులు",
+      "queries": 9,
+      "difficulty_rating": "Low"
+    },
+    {
+      "chapter": "Polynomials",
+      "queries": 27,
+      "difficulty_rating": "Medium"
+    },
+    {
+      "chapter": "Pair of Linear Equations in Two Variables",
+      "queries": 2,
+      "difficulty_rating": "Medium"
+    },
+    {
+      "chapter": "Mensuration",
+      "queries": 8,
+      "difficulty_rating": "Medium"
+    },
+    {
+      "chapter": "SSC Mathematics",
+      "queries": 19,
+      "difficulty_rating": "Medium"
+    },
+    {
+      "chapter": "Linear Equations",
+      "queries": 1,
+      "difficulty_rating": "Medium"
+    }
+  ],
+  "solution_views": {
+    "easy": 35,
+    "medium": 42,
+    "advanced": 19
+  },
+  "recent_queries": [
+    {
+      "query": "Exercise 10.1, Question 1: A joker’s cap is in the form of right circular cone whose base radius is 7cm and height is 24 cm. Find the area of the sheet required to make 10 such caps.",
+      "timestamp": 1789120887.645361,
+      "lang": "en"
+    },
+    {
+      "query": "Exercise 1.1, Question 2: Use division algorithm to show that any positive odd integer is of the form 6q + 1, or 6q + 3 or 6q + 5, where q is some integer.",
+      "timestamp": 1789120877.0499449,
+      "lang": "en"
+    },
+    {
+      "query": "Exercise 8.1, Question 4: Prove that a line drawn through the mid-point of one side of a triangle parallel to another side bisects the third side (Using basic proportionality theorem).",
+      "timestamp": 1789119761.413738,
+      "lang": "en"
+    },
+    {
+      "query": "Exercise 1.1, Question 4: Use division algorithm to show that the cube of any positive integer is of the form 9 m, 9m + 1 or 9m + 8.",
+      "timestamp": 1789119745.887806,
+      "lang": "en"
+    },
+    {
+      "query": "Exercise 1.1, Question 4: Use division algorithm to show that the cube of any positive integer is of the form 9 m, 9m + 1 or 9m + 8.",
+      "timestamp": 1789119739.0270865,
+      "lang": "en"
+    },
+    {
+      "query": "Exercise 1.1, Question 1: Use Euclid's algorithm to find the HCF of (i) 900 and 270 (ii) 196 and 38220 (iii) 1651 and 2032",
+      "timestamp": 1789119721.832566,
+      "lang": "en"
+    },
+    {
+      "query": "Can you find the HCF of 1.2 and 0.12 by using Euclid division algorithm? Justify your\nanswer.",
+      "timestamp": 1789119480.6090388,
+      "lang": "en"
+    },
+    {
+      "query": "find hcf of 900 and 270",
+      "timestamp": 1789119442.5247693,
+      "lang": "en"
+    },
+    {
+      "query": "Can you find the HCF of 1.2 and 0.12 by using Euclid division algorithm? Justify your answer.",
+      "timestamp": 1789119155.8511145,
+      "lang": "en"
+    },
+    {
+      "query": "find hcf of 900 and 270",
+      "timestamp": 1789117747.3236735,
+      "lang": "en"
+    },
+    {
+      "query": "Real Numbers - Exercise 1.1, Question 1",
+      "timestamp": 1789112820.6234455,
+      "lang": "en"
+    },
+    {
+      "query": "Real Numbers - Exercise 1.1, Question 3",
+      "timestamp": 1789112811.5518093,
+      "lang": "en"
+    },
+    {
+      "query": "Real Numbers - Exercise 1.1, Question 2",
+      "timestamp": 1789112805.398981,
+      "lang": "en"
+    },
+    {
+      "query": "Real Numbers - Exercise 1.1, Question 2",
+      "timestamp": 1789112800.288992,
+      "lang": "en"
+    },
+    {
+      "query": "Real Numbers - Exercise 1.1, Question 2",
+      "timestamp": 1789112790.2882898,
+      "lang": "en"
+    },
+    {
+      "query": "Real Numbers - Exercise 1.1, Question 1",
+      "timestamp": 1789112780.7868102,
+      "lang": "en"
+    },
+    {
+      "query": "Can you find the HCF of 1.2 and 0.12 by using Euclid division algorithm? Justify your\nanswer",
+      "timestamp": 1789112636.7332404,
+      "lang": "en"
+    },
+    {
+      "query": "Can you find the HCF of 1.2 and 0.12 by using Euclid division algorithm? Justify your\nanswer",
+      "timestamp": 1789112633.9012895,
+      "lang": "en"
+    },
+    {
+      "query": "Can you find the HCF of 1.2 and 0.12 by using Euclid division algorithm? Justify your\nanswer",
+      "timestamp": 1789112631.330018,
+      "lang": "en"
+    },
+    {
+      "query": "Can you find the HCF of 1.2 and 0.12 by using Euclid division algorithm? Justify your\nanswer",
+      "timestamp": 1789112627.8173199,
+      "lang": "en"
+    }
+  ],
+  "teacher_notes": [
+    {
+      "id": "tn-1",
+      "chapter": "Real Numbers",
+      "exercise": "1.1",
+      "teacher_name": "Smt. Sarada (Zilla Parishad High School)",
+      "tip": "Remind students that remainder r must always be strictly less than divisor b (0 <= r < b). Often students forget this in 2-mark questions!"
+    },
+    {
+      "id": "tn-2",
+      "chapter": "Quadratic Equations",
+      "exercise": "5.2",
+      "teacher_name": "Sri. K. Ramesh (Govt Boys High School)",
+      "tip": "When calculating discriminant b^2 - 4ac, pay special attention to minus signs when c is negative (e.g., -4 * 1 * -6 = +24)."
+    }
+  ]
+}
