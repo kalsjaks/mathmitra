@@ -13,7 +13,7 @@ import { fetchChapters, solveProblem } from './services/api';
 import { History, CheckCircle2, Heart, ArrowLeft, BookOpen, Target } from 'lucide-react';
 
 export default function App() {
-  const [currentView, setCurrentView] = useState('app'); // Default directly to app workspace so students never get stuck!
+  const [currentView, setCurrentView] = useState('home'); // Lands directly on Home Screen when opening the link
   const [currentTab, setCurrentTab] = useState('solver'); // 'solver' | 'formulas' | 'examprep' | 'pastpapers' | 'teacher'
   const [lang, setLang] = useState('en'); // 'en' | 'te'
   const [fontSize, setFontSize] = useState(16);
