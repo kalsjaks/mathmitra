@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
-import { Download, Mail, Volume2, Copy, Check, Star, BookOpen, Sparkles } from 'lucide-react';
+import { Download, Mail, Volume2, Copy, Check, Star, BookOpen, Sparkles, ArrowLeft } from 'lucide-react';
 import confetti from 'canvas-confetti';
 import { jsPDF } from 'jspdf';
 import MathRenderer from './MathRenderer';
 
-export default function SolutionViewer({ solutionData, onOpenEmailModal, lang }) {
+export default function SolutionViewer({ solutionData, onOpenEmailModal, lang, onGoBack, backLabel }) {
   const [copied, setCopied] = useState(false);
   const [isSpeaking, setIsSpeaking] = useState(false);
 
@@ -93,9 +93,21 @@ export default function SolutionViewer({ solutionData, onOpenEmailModal, lang })
 
   return (
     <div className="w-full max-w-4xl mx-auto mt-6 bg-white rounded-3xl p-6 sm:p-8 shadow-md border border-slate-200 animate-slide-up space-y-4">
-      {/* Top Bar with Badges & Action Buttons */}
+      {/* Top Header Row with Back Button & Chapter Badges */}
       <div className="flex flex-wrap items-center justify-between gap-3 border-b border-slate-100 pb-3.5">
         <div className="flex flex-wrap items-center gap-2">
+          {onGoBack && (
+            <button
+              type="button"
+              onClick={onGoBack}
+              className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-rose-50 hover:bg-[#c01e2e] text-rose-900 hover:text-white text-xs font-bold border border-rose-200 hover:border-[#c01e2e] transition-all cursor-pointer shadow-2xs group mr-1"
+              title="Go Back"
+            >
+              <ArrowLeft className="w-3.5 h-3.5 text-rose-600 group-hover:text-white group-hover:-translate-x-0.5 transition-transform" />
+              <span>{backLabel || (currentLang === 'te' ? 'వెనుకకు (Back)' : 'Back')}</span>
+            </button>
+          )}
+
           <span className="px-3 py-1 rounded-full text-xs font-bold bg-amber-50 text-amber-900 border border-amber-200">
             {currentLang === 'te' ? solutionData.chapter_te : solutionData.chapter_en}
           </span>
@@ -170,6 +182,29 @@ export default function SolutionViewer({ solutionData, onOpenEmailModal, lang })
           </div>
         </div>
       )}
+
+      {/* Bottom Back & Navigation Bar */}
+      <div className="flex flex-wrap items-center justify-between gap-3 pt-3 border-t border-slate-100">
+        {onGoBack && (
+          <button
+            type="button"
+            onClick={onGoBack}
+            className="flex items-center gap-2 px-5 py-2.5 rounded-xl bg-rose-50 hover:bg-[#c01e2e] text-rose-900 hover:text-white text-xs sm:text-sm font-bold border border-rose-200 hover:border-[#c01e2e] transition-all cursor-pointer shadow-2xs group"
+          >
+            <ArrowLeft className="w-4 h-4 text-rose-600 group-hover:text-white group-hover:-translate-x-0.5 transition-transform" />
+            <span>{backLabel || (currentLang === 'te' ? 'మునుపటి పేజీకి తిరిగి వెళ్ళండి' : 'Back to Practice Questions')}</span>
+          </button>
+        )}
+        <button
+          type="button"
+          onClick={() => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+          }}
+          className="text-xs font-bold text-slate-500 hover:text-rose-700 cursor-pointer ml-auto"
+        >
+          ↑ {currentLang === 'te' ? 'పైకి వెళ్ళండి (Top)' : 'Scroll to Top'}
+        </button>
+      </div>
     </div>
   );
 }

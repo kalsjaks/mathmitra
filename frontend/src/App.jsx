@@ -15,6 +15,7 @@ import { History, CheckCircle2, Heart, ArrowLeft, BookOpen, Target } from 'lucid
 export default function App() {
   const [currentView, setCurrentView] = useState('home'); // Lands directly on Home Screen when opening the link
   const [currentTab, setCurrentTab] = useState('solver'); // 'solver' | 'formulas' | 'examprep' | 'pastpapers' | 'teacher'
+  const [previousTab, setPreviousTab] = useState(null); // Tracks previous section for back navigation
   const [lang, setLang] = useState('en'); // 'en' | 'te'
   const [fontSize, setFontSize] = useState(16);
   const [chapters, setChapters] = useState([]);
@@ -53,6 +54,7 @@ export default function App() {
   const handleNavigateTab = (tabId) => {
     setCurrentView('app');
     setCurrentTab(tabId);
+    setPreviousTab(null);
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
@@ -141,6 +143,30 @@ export default function App() {
             {/* TAB 1: SOLVER WORKSPACE */}
             {currentTab === 'solver' && (
               <div className="space-y-6">
+                {/* Back to Previous Section Banner if navigated from 5-Day Plan */}
+                {previousTab && (
+                  <div className="flex items-center justify-between bg-rose-50/80 border border-rose-200 p-3 rounded-2xl animate-fade-in">
+                    <button
+                      onClick={() => {
+                        setCurrentTab(previousTab);
+                        setPreviousTab(null);
+                        window.scrollTo({ top: 0, behavior: 'smooth' });
+                      }}
+                      className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-[#c01e2e] hover:bg-[#a81926] text-white text-xs font-bold shadow-xs transition-all cursor-pointer group"
+                    >
+                      <ArrowLeft className="w-4 h-4 group-hover:-translate-x-0.5 transition-transform" />
+                      <span>
+                        {previousTab === 'examprep'
+                          ? (lang === 'te' ? '← 5 రోజుల ఫాస్ట్ ట్రాక్ ప్లాన్‌కు తిరిగి వెళ్ళండి (Back)' : '← Back to 5-Day Fast Track Plan')
+                          : (lang === 'te' ? '← మునుపటి పేజీకి తిరిగి వెళ్ళండి' : '← Back to Previous Section')}
+                      </span>
+                    </button>
+                    <span className="text-[11px] font-medium text-rose-900 hidden sm:inline">
+                      {lang === 'te' ? 'ప్లాన్ ప్రశ్నల సాధన కొనసాగించండి' : 'Continue practicing plan questions'}
+                    </span>
+                  </div>
+                )}
+
                 <ProblemInput
                   onSolve={handleSolve}
                   onOpenOcr={() => setIsOcrOpen(true)}
@@ -156,6 +182,17 @@ export default function App() {
                       solutionData={solutionData}
                       onOpenEmailModal={() => setIsEmailModalOpen(true)}
                       lang={lang}
+                      onGoBack={previousTab ? () => {
+                        setCurrentTab(previousTab);
+                        setPreviousTab(null);
+                        window.scrollTo({ top: 0, behavior: 'smooth' });
+                      } : () => {
+                        setSolutionData(null);
+                        window.scrollTo({ top: 0, behavior: 'smooth' });
+                      }}
+                      backLabel={previousTab === 'examprep'
+                        ? (lang === 'te' ? '5 రోజుల ప్లాన్‌కు తిరిగి వెళ్ళండి (Back)' : 'Back to 5-Day Plan')
+                        : (lang === 'te' ? 'మరో లెక్క సాధించండి (Back)' : 'Back to Problem Input')}
                     />
                   )}
                 </div>
@@ -200,6 +237,7 @@ export default function App() {
               <ExamPrepView
                 lang={lang}
                 onSolveQuery={(q) => {
+                  setPreviousTab('examprep');
                   setCurrentTab('solver');
                   handleSolve({ query: q });
                 }}
