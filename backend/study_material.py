@@ -774,49 +774,55 @@ EXAM_PREP_DATA = {
 # =============================================================================
 PAST_PAPERS_DATA = [
     {
+        "title": "TS SSC 2024 Mathematics Annual Board Examination",
         "year": "2024",
         "state": "Telangana (TS)",
         "exam_type": "Annual Public Examination (Single Paper - 80 Marks)",
         "mediums": ["English Medium", "Telugu Medium"],
         "description": "Latest single-paper format examination consisting of Section I, II, III, and IV with internal choice in Section IV.",
+        "download_url": "https://www.sakshieducation.com/ts-10th-class/question-papers",
         "download_links": [
             {
-                "label": "TS SSC 2024 Math Paper (Official BSE TS)",
-                "url": "https://bse.telangana.gov.in/",
-                "type": "Official Board Portal"
-            },
-            {
-                "label": "TS SSC 2024 Math Question Paper & Key (Sakshi Education)",
+                "label": "TS SSC 2024 Math Paper & Key (Sakshi Education)",
                 "url": "https://www.sakshieducation.com/ts-10th-class/question-papers",
                 "type": "Paper & Answer Key"
+            },
+            {
+                "label": "TS SSC Official BSE Portal",
+                "url": "https://bse.telangana.gov.in/",
+                "type": "Official Board Portal"
             }
         ]
     },
     {
+        "title": "AP SSC 2024 Mathematics Annual Examination",
         "year": "2024",
         "state": "Andhra Pradesh (AP)",
         "exam_type": "Annual Public Examination (100 Marks)",
         "mediums": ["English Medium", "Telugu Medium"],
         "description": "AP SSC 2024 Board question paper with 33 questions across 4 sections.",
+        "download_url": "https://www.eenadupratibha.net/ap-tenth/",
         "download_links": [
-            {
-                "label": "AP SSC 2024 Math Paper (BSE AP Official)",
-                "url": "https://bse.ap.gov.in/",
-                "type": "Official Board Portal"
-            },
             {
                 "label": "AP SSC 2024 Math Paper & Solutions (Eenadu Pratibha)",
                 "url": "https://www.eenadupratibha.net/ap-tenth/",
                 "type": "Paper & Solutions"
+            },
+            {
+                "label": "AP SSC Official BSE Portal",
+                "url": "https://bse.ap.gov.in/",
+                "type": "Official Board Portal"
             }
         ]
     },
     {
+        "title": "TS SSC 2023 Mathematics Annual Board Paper",
         "year": "2023",
         "state": "Telangana (TS)",
         "exam_type": "Annual Public Examination",
         "mediums": ["English Medium", "Telugu Medium"],
         "description": "TS SSC 2023 Board Examination Mathematics Question Paper with model answer key.",
+        "download_url": "https://www.sakshieducation.com/ts-10th-class/question-papers",
         "download_links": [
             {
                 "label": "TS SSC 2023 Math Paper & Solutions",
@@ -826,11 +832,13 @@ PAST_PAPERS_DATA = [
         ]
     },
     {
+        "title": "AP SSC 2023 Mathematics Board Paper",
         "year": "2023",
         "state": "Andhra Pradesh (AP)",
         "exam_type": "Annual Public Examination",
         "mediums": ["English Medium", "Telugu Medium"],
         "description": "AP SSC 2023 Board Mathematics Question Paper.",
+        "download_url": "https://www.eenadupratibha.net/ap-tenth/",
         "download_links": [
             {
                 "label": "AP SSC 2023 Math Question Paper",
@@ -840,25 +848,29 @@ PAST_PAPERS_DATA = [
         ]
     },
     {
+        "title": "TS & AP 2022 Mathematics Board Examination Papers",
         "year": "2022",
         "state": "Telangana & AP",
         "exam_type": "Board Examination Papers",
         "mediums": ["English Medium", "Telugu Medium"],
         "description": "Post-pandemic streamlined question papers with increased internal choice.",
+        "download_url": "https://www.sakshieducation.com/ts-10th-class/question-papers",
         "download_links": [
             {
                 "label": "TS & AP 2022 Math Board Papers",
-                "url": "https://www.sakshieducation.com/",
+                "url": "https://www.sakshieducation.com/ts-10th-class/question-papers",
                 "type": "Archive"
             }
         ]
     },
     {
+        "title": "Official SSC Mathematics Model Paper & Blueprint",
         "year": "Model Paper 2025",
         "state": "AP & TS State Boards",
         "exam_type": "Official Model Question Paper & Blueprint",
         "mediums": ["English Medium", "Telugu Medium"],
         "description": "Official SCERT blueprint demonstrating mark weightage by academic standards (Problem Solving: 40%, Reasoning & Proof: 20%, Communication: 10%, Connection: 15%, Representation & Visualization: 15%).",
+        "download_url": "https://scert.telangana.gov.in/",
         "download_links": [
             {
                 "label": "SCERT SSC Math Blueprint & Weightage Table",
