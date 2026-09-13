@@ -111,9 +111,9 @@ export default function HomeScreen({ onStart, onNavigateTab, lang, setLang }) {
           {/* Card 1: Solver */}
           <button
             onClick={() => onNavigateTab ? onNavigateTab('solver') : onStart()}
-            className="p-4 rounded-2xl bg-white/10 hover:bg-white/20 backdrop-blur-md border border-white/20 text-left transition-all hover:-translate-y-0.5 cursor-pointer flex flex-col justify-between space-y-2 group shadow-2xs"
+            className="p-4 rounded-2xl bg-white/10 hover:bg-white/20 backdrop-blur-md border border-white/20 hover:border-amber-300/50 text-left transition-all hover:-translate-y-0.5 cursor-pointer flex flex-col justify-between space-y-2 group shadow-2xs"
           >
-            <div className="w-9 h-9 rounded-xl bg-amber-400/20 text-amber-300 flex items-center justify-center">
+            <div className="w-9 h-9 rounded-xl bg-white/20 text-amber-300 flex items-center justify-center">
               <BookOpen className="w-5 h-5" />
             </div>
             <div>
@@ -129,13 +129,13 @@ export default function HomeScreen({ onStart, onNavigateTab, lang, setLang }) {
           {/* Card 2: Formulas to Byheart */}
           <button
             onClick={() => onNavigateTab ? onNavigateTab('formulas') : onStart()}
-            className="p-4 rounded-2xl bg-white/10 hover:bg-white/20 backdrop-blur-md border border-white/20 text-left transition-all hover:-translate-y-0.5 cursor-pointer flex flex-col justify-between space-y-2 group shadow-2xs"
+            className="p-4 rounded-2xl bg-white/10 hover:bg-white/20 backdrop-blur-md border border-white/20 hover:border-amber-300/50 text-left transition-all hover:-translate-y-0.5 cursor-pointer flex flex-col justify-between space-y-2 group shadow-2xs"
           >
-            <div className="w-9 h-9 rounded-xl bg-emerald-400/20 text-emerald-300 flex items-center justify-center">
+            <div className="w-9 h-9 rounded-xl bg-white/20 text-amber-300 flex items-center justify-center">
               <CheckCircle2 className="w-5 h-5" />
             </div>
             <div>
-              <h4 className="text-sm font-bold text-white group-hover:text-emerald-300 transition-colors">
+              <h4 className="text-sm font-bold text-white group-hover:text-amber-300 transition-colors">
                 {lang === 'te' ? '2. ముఖ్య సూత్రాలు' : '2. Formulas to Byheart'}
               </h4>
               <p className="text-[11px] text-red-100/80 mt-0.5">
@@ -147,13 +147,13 @@ export default function HomeScreen({ onStart, onNavigateTab, lang, setLang }) {
           {/* Card 3: How to Pass SSC (40+ Marks) */}
           <button
             onClick={() => onNavigateTab ? onNavigateTab('examprep') : onStart()}
-            className="p-4 rounded-2xl bg-white/10 hover:bg-white/20 backdrop-blur-md border border-white/20 text-left transition-all hover:-translate-y-0.5 cursor-pointer flex flex-col justify-between space-y-2 group shadow-2xs"
+            className="p-4 rounded-2xl bg-white/10 hover:bg-white/20 backdrop-blur-md border border-white/20 hover:border-amber-300/50 text-left transition-all hover:-translate-y-0.5 cursor-pointer flex flex-col justify-between space-y-2 group shadow-2xs"
           >
-            <div className="w-9 h-9 rounded-xl bg-teal-400/20 text-teal-300 flex items-center justify-center">
+            <div className="w-9 h-9 rounded-xl bg-white/20 text-amber-300 flex items-center justify-center">
               <Target className="w-5 h-5" />
             </div>
             <div>
-              <h4 className="text-sm font-bold text-white group-hover:text-teal-300 transition-colors">
+              <h4 className="text-sm font-bold text-white group-hover:text-amber-300 transition-colors">
                 {lang === 'te' ? '3. పాస్ గ్యారెంటీ (40+)' : '3. Pass Guarantee (40+)'}
               </h4>
               <p className="text-[11px] text-red-100/80 mt-0.5">
@@ -162,16 +162,16 @@ export default function HomeScreen({ onStart, onNavigateTab, lang, setLang }) {
             </div>
           </button>
 
-          {/* Card 4: Past Papers & Teacher Portal */}
+          {/* Card 4: Past Papers */}
           <button
             onClick={() => onNavigateTab ? onNavigateTab('pastpapers') : onStart()}
-            className="p-4 rounded-2xl bg-white/10 hover:bg-white/20 backdrop-blur-md border border-white/20 text-left transition-all hover:-translate-y-0.5 cursor-pointer flex flex-col justify-between space-y-2 group shadow-2xs"
+            className="p-4 rounded-2xl bg-white/10 hover:bg-white/20 backdrop-blur-md border border-white/20 hover:border-amber-300/50 text-left transition-all hover:-translate-y-0.5 cursor-pointer flex flex-col justify-between space-y-2 group shadow-2xs"
           >
-            <div className="w-9 h-9 rounded-xl bg-indigo-400/20 text-indigo-300 flex items-center justify-center">
+            <div className="w-9 h-9 rounded-xl bg-white/20 text-amber-300 flex items-center justify-center">
               <FileText className="w-5 h-5" />
             </div>
             <div>
-              <h4 className="text-sm font-bold text-white group-hover:text-indigo-300 transition-colors">
+              <h4 className="text-sm font-bold text-white group-hover:text-amber-300 transition-colors">
                 {lang === 'te' ? '4. బోర్డు పరీక్ష పేపర్లు' : '4. Past Board Papers'}
               </h4>
               <p className="text-[11px] text-red-100/80 mt-0.5">

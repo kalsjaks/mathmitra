@@ -188,7 +188,7 @@ export default function ProblemInput({
         {/* Camera Snapshot Button */}
         <button
           onClick={onOpenOcr}
-          className="flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-bold shadow-xs transition-all cursor-pointer"
+          className="flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-[#c01e2e] hover:bg-[#a81926] text-white text-xs font-bold shadow-xs transition-all cursor-pointer"
           title="Snap Photo of Problem"
         >
           <Camera className="w-4 h-4" />

@@ -26,7 +26,7 @@ export default function ExamPrepView({ onSolveQuery, lang = 'en' }) {
   if (loading) {
     return (
       <div className="text-center py-16 text-slate-500">
-        <div className="inline-block w-8 h-8 border-4 border-emerald-500 border-t-transparent rounded-full animate-spin mb-3"></div>
+        <div className="inline-block w-8 h-8 border-4 border-rose-600 border-t-transparent rounded-full animate-spin mb-3"></div>
         <p className="text-xs font-bold">{lang === 'te' ? 'పరీక్ష ప్రణాళిక లోడ్ అవుతోంది...' : 'Loading 40+ Marks Passing Strategy...'}</p>
       </div>
     );
@@ -37,16 +37,16 @@ export default function ExamPrepView({ onSolveQuery, lang = 'en' }) {
   return (
     <div className="w-full max-w-5xl mx-auto space-y-6 animate-fade-in pb-12">
       {/* Top Banner: 40+ Marks Guarantee */}
-      <div className="bg-gradient-to-r from-emerald-600 via-teal-700 to-slate-900 rounded-3xl p-6 sm:p-8 text-white shadow-lg relative overflow-hidden">
+      <div className="bg-gradient-to-r from-[#b91c1c] via-[#991b1b] to-[#7f1d1d] rounded-3xl p-6 sm:p-8 text-white shadow-lg relative overflow-hidden">
         <div className="relative z-10 max-w-2xl space-y-2">
-          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold bg-white/20 text-emerald-100 backdrop-blur-md">
+          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold bg-white/20 text-red-100 backdrop-blur-md">
             <Sparkles className="w-3.5 h-3.5 text-amber-300" />
             <span>{lang === 'te' ? '100% పాస్ గ్యారెంటీ ప్రణాళిక' : '100% Passing Blueprint • 40+ Marks'}</span>
           </div>
           <h2 className="text-2xl sm:text-3xl font-extrabold text-white">
             {lang === 'te' ? examData.title_te : examData.title_en}
           </h2>
-          <p className="text-xs sm:text-sm text-emerald-100/90 leading-relaxed font-medium">
+          <p className="text-xs sm:text-sm text-red-100/90 leading-relaxed font-medium">
             {lang === 'te' ? examData.slogan_te : examData.slogan_en}
           </p>
         </div>
@@ -58,7 +58,7 @@ export default function ExamPrepView({ onSolveQuery, lang = 'en' }) {
           onClick={() => setActiveTab('guaranteed')}
           className={`flex-1 min-w-[160px] py-2.5 px-4 rounded-xl text-xs font-bold transition-all cursor-pointer flex items-center justify-center gap-2 ${
             activeTab === 'guaranteed'
-              ? 'bg-emerald-600 text-white shadow-xs'
+              ? 'bg-[#c01e2e] text-white shadow-xs'
               : 'text-slate-600 hover:bg-slate-100'
           }`}
         >
@@ -70,7 +70,7 @@ export default function ExamPrepView({ onSolveQuery, lang = 'en' }) {
           onClick={() => setActiveTab('high_yield')}
           className={`flex-1 min-w-[160px] py-2.5 px-4 rounded-xl text-xs font-bold transition-all cursor-pointer flex items-center justify-center gap-2 ${
             activeTab === 'high_yield'
-              ? 'bg-emerald-600 text-white shadow-xs'
+              ? 'bg-[#c01e2e] text-white shadow-xs'
               : 'text-slate-600 hover:bg-slate-100'
           }`}
         >
@@ -82,7 +82,7 @@ export default function ExamPrepView({ onSolveQuery, lang = 'en' }) {
           onClick={() => setActiveTab('plan')}
           className={`flex-1 min-w-[160px] py-2.5 px-4 rounded-xl text-xs font-bold transition-all cursor-pointer flex items-center justify-center gap-2 ${
             activeTab === 'plan'
-              ? 'bg-emerald-600 text-white shadow-xs'
+              ? 'bg-[#c01e2e] text-white shadow-xs'
               : 'text-slate-600 hover:bg-slate-100'
           }`}
         >
@@ -94,15 +94,15 @@ export default function ExamPrepView({ onSolveQuery, lang = 'en' }) {
       {/* TAB 1: 15 GUARANTEED QUESTIONS */}
       {activeTab === 'guaranteed' && (
         <div className="space-y-3">
-          <div className="p-4 rounded-2xl bg-amber-50 border border-amber-200 text-xs text-amber-900 flex items-start gap-2.5">
-            <AlertTriangle className="w-4 h-4 text-amber-600 flex-shrink-0 mt-0.5" />
+          <div className="p-4 rounded-2xl bg-rose-50/80 border border-rose-200 text-xs text-rose-950 flex items-start gap-2.5">
+            <AlertTriangle className="w-4 h-4 text-rose-600 flex-shrink-0 mt-0.5" />
             <div>
               <p className="font-bold">
                 {lang === 'te'
                   ? 'ఈ 15 మోడల్ ప్రశ్నలను సాధిస్తే చాలు, 40 మార్కులతో సులభంగా పాస్ అవ్వచ్చు!'
                   : 'Mastering these 15 recurring question types guarantees 40+ marks in the SSC Board Examination!'}
               </p>
-              <p className="text-[11px] text-amber-800 mt-0.5">
+              <p className="text-[11px] text-rose-800 mt-0.5">
                 {lang === 'te'
                   ? 'ప్రతి ప్రశ్న పక్కనున్న "సాధించండి" బటన్ నొక్కి వెంటనే పూర్తి స్టెప్-బై-స్టెప్ సొల్యూషన్ చూడండి.'
                   : 'Click "Solve This" on any question to instantly view the step-by-step teacher solution.'}
@@ -114,11 +114,11 @@ export default function ExamPrepView({ onSolveQuery, lang = 'en' }) {
             {examData.guaranteed_questions?.map((item, idx) => (
               <div
                 key={idx}
-                className="bg-white rounded-2xl p-4 sm:p-5 border border-slate-200 shadow-2xs hover:border-emerald-300 transition-all flex flex-col justify-between space-y-3"
+                className="bg-white rounded-2xl p-4 sm:p-5 border border-slate-200 shadow-2xs hover:border-rose-300 transition-all flex flex-col justify-between space-y-3"
               >
                 <div className="space-y-1.5">
                   <div className="flex items-center justify-between">
-                    <span className="text-[11px] font-bold px-2 py-0.5 rounded-md bg-emerald-50 text-emerald-800 border border-emerald-200">
+                    <span className="text-[11px] font-bold px-2 py-0.5 rounded-md bg-rose-50 text-rose-800 border border-rose-200">
                       Q#{idx + 1} • {item.chapter}
                     </span>
                     <span className="text-xs font-bold text-amber-700 bg-amber-50 px-2 py-0.5 rounded-md border border-amber-200">
@@ -134,7 +134,7 @@ export default function ExamPrepView({ onSolveQuery, lang = 'en' }) {
                     {item.typical_question}
                   </p>
 
-                  <p className="text-[11px] text-emerald-800 font-medium">
+                  <p className="text-[11px] text-rose-900 font-medium">
                     💡 <span className="font-bold">{lang === 'te' ? 'పరీక్ష చిట్కా: ' : 'SSC Tip: '}</span>
                     {lang === 'te' && item.tip_te ? item.tip_te : item.tip_en}
                   </p>
@@ -142,7 +142,7 @@ export default function ExamPrepView({ onSolveQuery, lang = 'en' }) {
 
                 <button
                   onClick={() => onSolveQuery(item.typical_question)}
-                  className="w-full py-2 px-3 rounded-xl bg-emerald-50 hover:bg-emerald-600 text-emerald-700 hover:text-white text-xs font-bold border border-emerald-200 hover:border-emerald-600 transition-all flex items-center justify-center gap-1.5 cursor-pointer shadow-2xs"
+                  className="w-full py-2 px-3 rounded-xl bg-rose-50 hover:bg-[#c01e2e] text-rose-900 hover:text-white text-xs font-bold border border-rose-200 hover:border-[#c01e2e] transition-all flex items-center justify-center gap-1.5 cursor-pointer shadow-2xs"
                 >
                   <span>{lang === 'te' ? 'దీనిని సాధించండి' : 'Solve This Problem'}</span>
                   <ArrowRight className="w-3.5 h-3.5" />
@@ -160,11 +160,11 @@ export default function ExamPrepView({ onSolveQuery, lang = 'en' }) {
             {examData.high_yield_chapters?.map((ch, idx) => (
               <div
                 key={idx}
-                className="bg-white rounded-2xl p-5 border border-slate-200 shadow-2xs space-y-3"
+                className="bg-white rounded-2xl p-5 border border-slate-200 shadow-2xs space-y-3 hover:border-rose-300 transition-all"
               >
                 <div className="flex items-center justify-between">
                   <div className="flex items-center gap-2.5">
-                    <span className="w-7 h-7 rounded-lg bg-emerald-100 text-emerald-800 font-black text-xs flex items-center justify-center">
+                    <span className="w-7 h-7 rounded-lg bg-rose-100 text-rose-900 font-black text-xs flex items-center justify-center">
                       {idx + 1}
                     </span>
                     <h3 className="text-sm font-bold text-slate-800">
@@ -188,7 +188,7 @@ export default function ExamPrepView({ onSolveQuery, lang = 'en' }) {
                 </div>
 
                 <div className="p-2.5 rounded-xl bg-slate-50 border border-slate-100 text-[11px] text-slate-700">
-                  <span className="font-bold text-emerald-800">{lang === 'te' ? 'లక్ష్యం: ' : 'Target: '}</span>
+                  <span className="font-bold text-rose-900">{lang === 'te' ? 'లక్ష్యం: ' : 'Target: '}</span>
                   <span>{ch.target_marks}</span>
                 </div>
               </div>
@@ -203,23 +203,23 @@ export default function ExamPrepView({ onSolveQuery, lang = 'en' }) {
           {examData.five_day_plan?.map((day, idx) => (
             <div
               key={idx}
-              className="bg-white rounded-2xl p-5 border border-slate-200 shadow-2xs flex flex-col sm:flex-row sm:items-center justify-between gap-4"
+              className="bg-white rounded-2xl p-5 border border-slate-200 shadow-2xs flex flex-col sm:flex-row sm:items-center justify-between gap-4 hover:border-rose-300 transition-all"
             >
               <div className="flex items-start gap-3">
-                <span className="px-3 py-1.5 rounded-xl bg-teal-100 text-teal-900 font-extrabold text-xs flex-shrink-0">
+                <span className="px-3 py-1.5 rounded-xl bg-rose-100 text-rose-900 font-extrabold text-xs flex-shrink-0">
                   Day {day.day}
                 </span>
                 <div>
                   <h4 className="text-sm font-bold text-slate-800">{day.focus}</h4>
                   <p className="text-xs text-slate-500 mt-0.5">{day.chapters}</p>
-                  <p className="text-[11px] text-emerald-800 font-medium mt-1">
+                  <p className="text-[11px] text-rose-900 font-medium mt-1">
                     🎯 {lang === 'te' ? 'లక్ష్యం: ' : 'Daily Target: '}{day.target}
                   </p>
                 </div>
               </div>
 
               <div className="text-right flex-shrink-0">
-                <span className="inline-block text-xs font-bold text-emerald-700 bg-emerald-50 px-3 py-1 rounded-full border border-emerald-200">
+                <span className="inline-block text-xs font-bold text-rose-800 bg-rose-50 px-3 py-1 rounded-full border border-rose-200">
                   +{day.estimated_marks} Marks
                 </span>
               </div>

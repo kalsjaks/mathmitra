@@ -37,16 +37,16 @@ export default function FormulasView({ lang = 'en' }) {
   return (
     <div className="w-full max-w-5xl mx-auto space-y-6 animate-fade-in pb-12">
       {/* Header Banner */}
-      <div className="bg-gradient-to-r from-amber-600 via-amber-700 to-amber-800 rounded-3xl p-6 sm:p-8 text-white shadow-lg relative overflow-hidden">
+      <div className="bg-gradient-to-r from-[#b91c1c] via-[#991b1b] to-[#7f1d1d] rounded-3xl p-6 sm:p-8 text-white shadow-lg relative overflow-hidden">
         <div className="relative z-10 max-w-2xl space-y-2">
-          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold bg-white/20 text-amber-100 backdrop-blur-md">
+          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold bg-white/20 text-red-100 backdrop-blur-md">
             <Sparkles className="w-3.5 h-3.5 text-amber-300" />
             <span>{lang === 'te' ? '10వ తరగతి SSC ముఖ్య సూత్రాలు' : 'Formulas to Byheart • 14 Chapters'}</span>
           </div>
           <h2 className="text-2xl sm:text-3xl font-extrabold text-white">
             {lang === 'te' ? 'ముఖ్యమైన గణిత సూత్రాలు & సులువైన ట్రిక్స్' : 'All 14 Chapters Formulas & Key Notes'}
           </h2>
-          <p className="text-xs sm:text-sm text-amber-100/90 leading-relaxed">
+          <p className="text-xs sm:text-sm text-red-100/90 leading-relaxed">
             {lang === 'te'
               ? 'పరీక్షల్లో గరిష్ట మార్కులు సాధించడానికి ప్రతి అధ్యాయం నుండి ఖచ్చితంగా గుర్తుంచుకోవలసిన సూత్రాలు మరియు షార్ట్‌కట్ చిట్కాలు.'
               : 'Every formula, condition, and mnemonic you need to remember for SSC Board Exams, with Telugu translations and step tips.'}
@@ -77,7 +77,7 @@ export default function FormulasView({ lang = 'en' }) {
       {/* Loading State */}
       {loading ? (
         <div className="text-center py-12 text-slate-500">
-          <div className="inline-block w-8 h-8 border-4 border-amber-500 border-t-transparent rounded-full animate-spin mb-3"></div>
+          <div className="inline-block w-8 h-8 border-4 border-rose-600 border-t-transparent rounded-full animate-spin mb-3"></div>
           <p className="text-xs font-bold">{lang === 'te' ? 'సూత్రాలు లోడ్ అవుతున్నాయి...' : 'Loading 14-Chapter Formulas...'}</p>
         </div>
       ) : (
@@ -88,7 +88,7 @@ export default function FormulasView({ lang = 'en' }) {
             return (
               <div
                 key={ch.id}
-                className="bg-white rounded-2xl border border-slate-200 shadow-2xs overflow-hidden transition-all"
+                className="bg-white rounded-2xl border border-slate-200 shadow-2xs overflow-hidden transition-all hover:border-rose-300"
               >
                 {/* Chapter Title Bar */}
                 <button
@@ -96,7 +96,7 @@ export default function FormulasView({ lang = 'en' }) {
                   className="w-full px-5 py-4 flex items-center justify-between text-left hover:bg-slate-50 transition-colors cursor-pointer"
                 >
                   <div className="flex items-center gap-3">
-                    <span className="w-8 h-8 rounded-xl bg-amber-100 text-amber-800 font-black text-xs sm:text-sm flex items-center justify-center flex-shrink-0">
+                    <span className="w-8 h-8 rounded-xl bg-rose-100 text-rose-900 font-black text-xs sm:text-sm flex items-center justify-center flex-shrink-0">
                       {ch.id}
                     </span>
                     <div>
@@ -108,8 +108,8 @@ export default function FormulasView({ lang = 'en' }) {
                           {ch.category}
                         </span>
                         <span>•</span>
-                        <span className="text-amber-700 font-bold flex items-center gap-1">
-                          <Award className="w-3 h-3 text-amber-600" />
+                        <span className="text-rose-700 font-bold flex items-center gap-1">
+                          <Award className="w-3 h-3 text-rose-600" />
                           {ch.weightage}
                         </span>
                       </div>
@@ -129,13 +129,13 @@ export default function FormulasView({ lang = 'en' }) {
                       {ch.formulas?.map((f, idx) => (
                         <div
                           key={idx}
-                          className="p-4 rounded-xl bg-white border border-slate-200/80 shadow-2xs space-y-2 hover:border-amber-300 transition-colors"
+                          className="p-4 rounded-xl bg-white border border-slate-200/80 shadow-2xs space-y-2 hover:border-rose-300 transition-colors"
                         >
                           <div className="flex items-center justify-between">
                             <span className="text-xs font-bold text-slate-800">
                               {lang === 'te' && f.title_te ? f.title_te : f.title_en}
                             </span>
-                            <span className="text-[10px] font-bold px-2 py-0.5 rounded-md bg-amber-50 text-amber-800 border border-amber-200">
+                            <span className="text-[10px] font-bold px-2 py-0.5 rounded-md bg-rose-50 text-rose-800 border border-rose-200">
                               Formula #{idx + 1}
                             </span>
                           </div>
