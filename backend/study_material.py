@@ -693,11 +693,11 @@ PAST_PAPERS_DATA = [
         "exam_type": "Annual Public Examination (Single Paper - 80 Marks)",
         "mediums": ["English Medium", "Telugu Medium"],
         "description": "Latest single-paper format examination consisting of Section I, II, III, and IV with internal choice in Section IV.",
-        "download_url": "https://www.sakshieducation.com/ts-10th-class/question-papers",
+        "download_url": "https://education.sakshi.com/en/ts-10th-class",
         "download_links": [
             {
                 "label": "TS SSC 2024 Math Paper & Key (Sakshi Education)",
-                "url": "https://www.sakshieducation.com/ts-10th-class/question-papers",
+                "url": "https://education.sakshi.com/en/ts-10th-class",
                 "type": "Paper & Answer Key"
             },
             {
@@ -714,11 +714,11 @@ PAST_PAPERS_DATA = [
         "exam_type": "Annual Public Examination (100 Marks)",
         "mediums": ["English Medium", "Telugu Medium"],
         "description": "AP SSC 2024 Board question paper with 33 questions across 4 sections.",
-        "download_url": "https://www.eenadupratibha.net/ap-tenth/",
+        "download_url": "https://pratibha.eenadu.net/",
         "download_links": [
             {
                 "label": "AP SSC 2024 Math Paper & Solutions (Eenadu Pratibha)",
-                "url": "https://www.eenadupratibha.net/ap-tenth/",
+                "url": "https://pratibha.eenadu.net/",
                 "type": "Paper & Solutions"
             },
             {
@@ -735,11 +735,11 @@ PAST_PAPERS_DATA = [
         "exam_type": "Annual Public Examination",
         "mediums": ["English Medium", "Telugu Medium"],
         "description": "TS SSC 2023 Board Examination Mathematics Question Paper with model answer key.",
-        "download_url": "https://www.sakshieducation.com/ts-10th-class/question-papers",
+        "download_url": "https://education.sakshi.com/en/ts-10th-class",
         "download_links": [
             {
                 "label": "TS SSC 2023 Math Paper & Solutions",
-                "url": "https://www.sakshieducation.com/ts-10th-class/question-papers",
+                "url": "https://education.sakshi.com/en/ts-10th-class",
                 "type": "Question Paper PDF"
             }
         ]
@@ -751,11 +751,11 @@ PAST_PAPERS_DATA = [
         "exam_type": "Annual Public Examination",
         "mediums": ["English Medium", "Telugu Medium"],
         "description": "AP SSC 2023 Board Mathematics Question Paper.",
-        "download_url": "https://www.eenadupratibha.net/ap-tenth/",
+        "download_url": "https://pratibha.eenadu.net/",
         "download_links": [
             {
                 "label": "AP SSC 2023 Math Question Paper",
-                "url": "https://www.eenadupratibha.net/ap-tenth/",
+                "url": "https://pratibha.eenadu.net/",
                 "type": "Question Paper PDF"
             }
         ]
@@ -767,11 +767,11 @@ PAST_PAPERS_DATA = [
         "exam_type": "Board Examination Papers",
         "mediums": ["English Medium", "Telugu Medium"],
         "description": "Post-pandemic streamlined question papers with increased internal choice.",
-        "download_url": "https://www.sakshieducation.com/ts-10th-class/question-papers",
+        "download_url": "https://education.sakshi.com/en/ts-10th-class",
         "download_links": [
             {
                 "label": "TS & AP 2022 Math Board Papers",
-                "url": "https://www.sakshieducation.com/ts-10th-class/question-papers",
+                "url": "https://education.sakshi.com/en/ts-10th-class",
                 "type": "Archive"
             }
         ]
