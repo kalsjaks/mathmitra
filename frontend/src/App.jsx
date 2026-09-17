@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Routes, Route, Navigate, Link } from 'react-router-dom';
 import Header from './components/Header';
 import HomeScreen from './components/HomeScreen';
 import ProblemInput from './components/ProblemInput';
@@ -10,11 +11,36 @@ import TeacherDashboard from './components/TeacherDashboard';
 import CameraOcrModal from './components/CameraOcrModal';
 import EmailModal from './components/EmailModal';
 import { fetchChapters, solveProblem } from './services/api';
-import { History, CheckCircle2, Heart, ArrowLeft, BookOpen, Target } from 'lucide-react';
+import { History, CheckCircle2, Heart, ArrowLeft } from 'lucide-react';
+import SeoLandingPage from './pages/seo/SeoLandingPage';
 
-export default function App() {
-  const [currentView, setCurrentView] = useState('home'); // Lands directly on Home Screen when opening the link
-  const [currentTab, setCurrentTab] = useState('solver'); // 'solver' | 'formulas' | 'examprep' | 'pastpapers' | 'teacher'
+function MathMitraWorkspace() {
+  const [currentView, setCurrentView] = useState(() => {
+    try {
+      const searchParams = new URLSearchParams(window.location.search);
+      const tabParam = searchParams.get('tab');
+      if (tabParam && ['solver', 'formulas', 'examprep', 'pastpapers', 'teacher'].includes(tabParam)) {
+        return 'app';
+      }
+    } catch {
+      // fallback
+    }
+    return 'home';
+  });
+
+  const [currentTab, setCurrentTab] = useState(() => {
+    try {
+      const searchParams = new URLSearchParams(window.location.search);
+      const tabParam = searchParams.get('tab');
+      if (tabParam && ['solver', 'formulas', 'examprep', 'pastpapers', 'teacher'].includes(tabParam)) {
+        return tabParam;
+      }
+    } catch {
+      // fallback
+    }
+    return 'solver';
+  });
+
   const [previousTab, setPreviousTab] = useState(null); // Tracks previous section for back navigation
   const [lang, setLang] = useState('en'); // 'en' | 'te'
   const [fontSize, setFontSize] = useState(16);
@@ -290,6 +316,17 @@ export default function App() {
             <span>&bull;</span>
             <span>Telangana & AP 10th Class</span>
           </div>
+          <div className="flex flex-wrap items-center justify-center gap-2.5 text-[11px] text-slate-500">
+            <Link to="/ssc-maths-formulas" className="hover:text-[#c01e2e] transition-colors">14 Formulas</Link>
+            <span>&bull;</span>
+            <Link to="/algebra-formulas" className="hover:text-[#c01e2e] transition-colors">Algebra</Link>
+            <span>&bull;</span>
+            <Link to="/geometry-formulas" className="hover:text-[#c01e2e] transition-colors">Geometry</Link>
+            <span>&bull;</span>
+            <Link to="/trigonometry-formulas" className="hover:text-[#c01e2e] transition-colors">Trigonometry</Link>
+            <span>&bull;</span>
+            <Link to="/ssc-important-questions" className="hover:text-[#c01e2e] transition-colors">Important Questions</Link>
+          </div>
           <div className="flex items-center gap-1">
             <span>Simple Step-by-Step Math Learning</span>
             <Heart className="w-3.5 h-3.5 text-rose-500 fill-rose-500 inline ml-1" />
@@ -299,3 +336,18 @@ export default function App() {
     </div>
   );
 }
+
+export default function App() {
+  return (
+    <Routes>
+      <Route path="/" element={<MathMitraWorkspace />} />
+      <Route path="/ssc-maths-formulas" element={<SeoLandingPage slug="ssc-maths-formulas" />} />
+      <Route path="/algebra-formulas" element={<SeoLandingPage slug="algebra-formulas" />} />
+      <Route path="/geometry-formulas" element={<SeoLandingPage slug="geometry-formulas" />} />
+      <Route path="/trigonometry-formulas" element={<SeoLandingPage slug="trigonometry-formulas" />} />
+      <Route path="/ssc-important-questions" element={<SeoLandingPage slug="ssc-important-questions" />} />
+      <Route path="*" element={<Navigate to="/" replace />} />
+    </Routes>
+  );
+}
+

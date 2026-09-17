@@ -22,6 +22,10 @@
       "handle": "filesystem"
     },
     {
+      "src": "/(ssc-maths-formulas|algebra-formulas|geometry-formulas|trigonometry-formulas|ssc-important-questions)",
+      "dest": "/frontend/index.html"
+    },
+    {
       "src": "/(.*)",
       "dest": "/frontend/$1"
     }
