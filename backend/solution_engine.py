@@ -75,6 +75,12 @@ def solve_math_problem(query: str, exercise: str = None, page: int = None, lang:
     norm_query = normalize_text(query)
     q_low = norm_query.lower()
 
+    # 0. CONCEPTUAL / DEFINITION / "WHAT IS" QUERY DISPATCHER
+    from backend.concept_solver import solve_concept_query
+    concept_sol = solve_concept_query(norm_query, detected_lang)
+    if concept_sol:
+        return concept_sol
+
     # 1. QUADRATIC POLYNOMIAL FROM ZEROES (alpha and beta)
     zeroes_patterns = [
         r'zeros?\s*(?:are|of)?\s*:?\s*([+\-]?\s*\d+(?:\s*/\s*\d+)?)\s*(?:and|,|&)\s*([+\-]?\s*\d+(?:\s*/\s*\d+)?)',
@@ -1614,6 +1620,12 @@ $$= {sp.latex(simplified)}$$
         }
     except Exception:
         pass
+
+    # Final concept lookup check before general board resolution
+    from backend.concept_solver import solve_concept_query
+    fallback_concept = solve_concept_query(query, lang)
+    if fallback_concept:
+        return fallback_concept
 
     # Standard general board curriculum resolution
     en_text = f"""### 🧮 Question
