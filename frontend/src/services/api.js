@@ -104,9 +104,9 @@ export async function uploadTeacherPdf(file) {
   return await res.json();
 }
 
-export async function fetchQuestionPreview(exercise, question = 1) {
+export async function fetchQuestionPreview(exercise, question = 1, lang = 'en') {
   try {
-    const res = await fetch(`${API_BASE}/exercise-question?exercise=${encodeURIComponent(exercise)}&question=${question}`);
+    const res = await fetch(`${API_BASE}/exercise-question?exercise=${encodeURIComponent(exercise)}&question=${question}&lang=${encodeURIComponent(lang)}`);
     if (!res.ok) return null;
     return await res.json();
   } catch (err) {

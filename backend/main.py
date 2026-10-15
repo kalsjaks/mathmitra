@@ -61,9 +61,9 @@ def get_chapters():
     }
 
 @app.get("/api/exercise-question")
-def get_question_preview(exercise: str, question: int = 1):
+def get_question_preview(exercise: str, question: int = 1, lang: Optional[str] = "en"):
     """Returns question text and sub-questions for textbook question preview before solving."""
-    return get_textbook_question(exercise, question)
+    return get_textbook_question(exercise, question, lang=lang or "en")
 
 @app.get("/api/formulas")
 def get_all_formulas():

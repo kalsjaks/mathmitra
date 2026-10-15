@@ -13,6 +13,7 @@ import json
 import os
 
 INDEX_PATH = os.path.join(os.path.dirname(__file__), "data", "textbook_index.json")
+TM_DATA_PATH = os.path.join(os.path.dirname(__file__), "data", "telugu_textbook_questions.json")
 
 # =============================================================================
 # 1. FORMULAS FOR ALL 14 CHAPTERS
@@ -797,17 +798,44 @@ PAST_PAPERS_DATA = [
 # =============================================================================
 # 4. TEXTBOOK QUESTION RETRIEVER
 # =============================================================================
-def get_textbook_question(exercise_id: str, question_num: int = 1) -> dict:
+def get_textbook_question(exercise_id: str, question_num: int = 1, lang: str = "en") -> dict:
     """
-    Extracts the exact question text and sub-questions for a given exercise and question number
-    from the textbook index snippet.
+    Extracts the exact question text and sub-questions for a given exercise and question number.
+    Supports authentic Telugu Medium questions from 'X Mathematics TM 2026-27' when lang == 'te',
+    and English Medium textbook index when lang == 'en'.
     """
+    clean_ex = str(exercise_id).strip().replace("Exercise", "").replace("అభ్యాసం", "").strip()
+    q_str = str(question_num).strip()
+
+    # 1. Prioritize Telugu Medium textbook data if requested
+    if lang == "te" and os.path.exists(TM_DATA_PATH):
+        try:
+            with open(TM_DATA_PATH, "r", encoding="utf-8") as f:
+                tm_data = json.load(f)
+            ex_tm = tm_data.get("exercises", {}).get(clean_ex)
+            if ex_tm and "questions" in ex_tm:
+                tm_qs = ex_tm["questions"]
+                if q_str in tm_qs:
+                    q_info = tm_qs[q_str]
+                    return {
+                        "exercise": clean_ex,
+                        "question_number": int(question_num),
+                        "question_text": q_info.get("text", ""),
+                        "sub_questions": q_info.get("sub_questions", []),
+                        "total_questions_in_exercise": max(len(tm_qs), 5),
+                        "language": "te",
+                        "book": "X Mathematics TM 2026-27"
+                    }
+        except Exception:
+            pass
+
     if not os.path.exists(INDEX_PATH):
         return {
             "exercise": exercise_id,
             "question_number": question_num,
             "question_text": f"Exercise {exercise_id}, Question {question_num}",
-            "sub_questions": []
+            "sub_questions": [],
+            "language": lang
         }
         
     try:
@@ -818,7 +846,8 @@ def get_textbook_question(exercise_id: str, question_num: int = 1) -> dict:
             "exercise": exercise_id,
             "question_number": question_num,
             "question_text": f"Exercise {exercise_id}, Question {question_num}",
-            "sub_questions": []
+            "sub_questions": [],
+            "language": lang
         }
         
     ex_data = index_data.get("exercises", {}).get(exercise_id, {})
@@ -858,8 +887,10 @@ def get_textbook_question(exercise_id: str, question_num: int = 1) -> dict:
         "question_number": int(question_num),
         "question_text": found_q,
         "sub_questions": sub_parts,
-        "total_questions_in_exercise": max(len(qs), 8)
+        "total_questions_in_exercise": max(len(qs), 8),
+        "language": lang
     }
+
 
 def get_curated_exercise_question(exercise_id: str, q_num: int) -> str:
     """Curated standard questions for major SSC exercises if snippet is cut short."""

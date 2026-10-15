@@ -24,6 +24,9 @@ build/
 .idea/
 .DS_Store
 Thumbs.db
+# Scratch scripts and temporary files
+scratch/
+*.docx
 ~$*.docx
 
 # Python virtual envs

@@ -30,18 +30,18 @@ export default function ProblemInput({
     }
   }, [selectedChapterId, chapters]);
 
-  // Load question preview whenever exercise or problem number changes
+  // Load question preview whenever exercise, problem number, or language changes
   useEffect(() => {
     if (selectedExercise && selectedProblemNum) {
-      loadPreview(selectedExercise, selectedProblemNum);
+      loadPreview(selectedExercise, selectedProblemNum, lang);
     }
-  }, [selectedExercise, selectedProblemNum]);
+  }, [selectedExercise, selectedProblemNum, lang]);
 
-  const loadPreview = async (ex, qNum) => {
+  const loadPreview = async (ex, qNum, currentLang = lang) => {
     setPreviewLoading(true);
     setSelectedSubQuestion(null);
     try {
-      const data = await fetchQuestionPreview(ex, parseInt(qNum) || 1);
+      const data = await fetchQuestionPreview(ex, parseInt(qNum) || 1, currentLang);
       setQuestionPreview(data);
     } catch (e) {
       console.warn('Failed to load question preview', e);
@@ -51,8 +51,9 @@ export default function ProblemInput({
     }
   };
 
-  // Quick problem number options
-  const problemNumbers = ['1', '2', '3', '4', '5', '6', '7', '8'];
+  // Quick problem number options based on exercise question count
+  const totalAvailableQs = questionPreview?.total_questions_in_exercise || 8;
+  const problemNumbers = Array.from({ length: Math.max(totalAvailableQs, 6) }, (_, i) => String(i + 1));
 
   // Examples for Type or Speak
   const examples = lang === 'te' ? [
@@ -127,20 +128,28 @@ export default function ProblemInput({
     if (customProblemText.trim()) {
       targetQuery = customProblemText.trim();
     } else if (selectedSubQuestion) {
-      targetQuery = `Exercise ${selectedExercise}, Question ${selectedProblemNum} ${selectedSubQuestion.part}: ${selectedSubQuestion.text}`;
+      targetQuery = lang === 'te'
+        ? `అభ్యాసం ${selectedExercise}, ప్రశ్న ${selectedProblemNum} ${selectedSubQuestion.part}: ${selectedSubQuestion.text}`
+        : `Exercise ${selectedExercise}, Question ${selectedProblemNum} ${selectedSubQuestion.part}: ${selectedSubQuestion.text}`;
     } else if (questionPreview && questionPreview.question_text) {
-      targetQuery = `Exercise ${selectedExercise}, Question ${selectedProblemNum}: ${questionPreview.question_text}`;
+      targetQuery = lang === 'te'
+        ? `అభ్యాసం ${selectedExercise}, ప్రశ్న ${selectedProblemNum}: ${questionPreview.question_text}`
+        : `Exercise ${selectedExercise}, Question ${selectedProblemNum}: ${questionPreview.question_text}`;
     } else {
-      targetQuery = `${chName} - Exercise ${selectedExercise}, Question ${selectedProblemNum}`;
+      targetQuery = lang === 'te'
+        ? `${chName} - అభ్యాసం ${selectedExercise}, ప్రశ్న ${selectedProblemNum}`
+        : `${chName} - Exercise ${selectedExercise}, Question ${selectedProblemNum}`;
     }
 
     onSolve({
       query: targetQuery,
       exercise: selectedExercise,
       page: null,
+      language: lang,
       action_type: 'solve',
     });
   };
+
 
   // Handler for Type or Speak submission
   const handleTypedSolve = () => {
@@ -181,7 +190,7 @@ export default function ProblemInput({
             }`}
           >
             <Search className="w-4 h-4 text-amber-300" />
-            <span>{lang === 'te' ? '2. టైప్ చేయండి / మాట్లాడండి' : '2. Type or Speak Problem'}</span>
+            <span>{lang === 'te' ? '2. టైప్ / పేస్ట్ చేయండి లేదా మాట్లాడండి' : '2. Type, Paste or Speak Any Problem'}</span>
           </button>
         </div>
 
@@ -262,10 +271,17 @@ export default function ProblemInput({
             <div className="flex items-center justify-between">
               <span className="text-xs font-bold text-amber-950 flex items-center gap-1.5">
                 <FileQuestion className="w-4 h-4 text-amber-700" />
-                <span>
-                  {lang === 'te'
-                    ? `ఎంచుకున్న పాఠ్యపుస్తక ప్రశ్న (అభ్యాసం ${selectedExercise}, ప్రశ్న ${selectedProblemNum}):`
-                    : `Textbook Question Preview (Exercise ${selectedExercise}, Q${selectedProblemNum}):`}
+                <span className="flex items-center gap-2 flex-wrap">
+                  <span>
+                    {lang === 'te'
+                      ? `ఎంచుకున్న పాఠ్యపుస్తక ప్రశ్న (అభ్యాసం ${selectedExercise}, ప్రశ్న ${selectedProblemNum}):`
+                      : `Textbook Question Preview (Exercise ${selectedExercise}, Q${selectedProblemNum}):`}
+                  </span>
+                  {questionPreview?.book && (
+                    <span className="text-[10px] font-bold px-2 py-0.5 rounded-full bg-amber-200/80 text-amber-900 border border-amber-300">
+                      📖 {questionPreview.book}
+                    </span>
+                  )}
                 </span>
               </span>
               {previewLoading && (
@@ -371,8 +387,8 @@ export default function ProblemInput({
               onChange={(e) => setQuery(e.target.value)}
               placeholder={
                 lang === 'te'
-                  ? 'మీ లెక్కను ఇక్కడ టైప్ చేయండి లేదా మైక్ నొక్కి మాట్లాడండి (ఉదా: 900 మరియు 270 ల గ.సా.భా, లేదా 1.2 and 0.12, x^2 + 5x + 6 = 0)...'
-                  : 'Type any math problem or tap the mic to speak (e.g. Find HCF of 1.2 and 0.12, roots of x^2 + 5x + 6, sin 30)...'
+                  ? 'మీ లెక్కను ఇక్కడ టైప్ చేయండి, పేస్ట్ చేయండి లేదా మైక్ నొక్కి మాట్లాడండి (ఉదా: 6q + 1 బేసి సంఖ్య నిరూపణ, వర్గ సమీకరణాలు, √5 కరణీయ సంఖ్య, త్రికోణమితి)...'
+                  : 'Type or paste any math problem here (e.g. Use division algorithm to show positive odd integer is 6q+1, roots of 2x^2+x-6=0, prove √5 is irrational)...'
               }
               className="w-full p-1 text-sm sm:text-base focus:outline-none bg-transparent text-slate-800 placeholder:text-slate-400 resize-none"
             />

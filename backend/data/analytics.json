@@ -1,8 +1,8 @@
 {
-  "total_queries": 161,
+  "total_queries": 213,
   "queries_by_language": {
-    "en": 140,
-    "te": 21
+    "en": 169,
+    "te": 44
   },
   "struggled_topics": [
     {
@@ -14,13 +14,13 @@
     {
       "chapter": "Real Numbers",
       "chapter_te": "వాస్తవ సంఖ్యలు",
-      "queries": 51,
+      "queries": 92,
       "difficulty_rating": "Medium"
     },
     {
       "chapter": "Trigonometry",
       "chapter_te": "త్రికోణమితి",
-      "queries": 16,
+      "queries": 17,
       "difficulty_rating": "High"
     },
     {
@@ -63,7 +63,12 @@
     },
     {
       "chapter": "Linear Equations",
-      "queries": 1,
+      "queries": 2,
+      "difficulty_rating": "Medium"
+    },
+    {
+      "chapter": "Sets",
+      "queries": 9,
       "difficulty_rating": "Medium"
     }
   ],
@@ -74,103 +79,103 @@
   },
   "recent_queries": [
     {
-      "query": "Exercise 10.1, Question 1: A joker’s cap is in the form of right circular cone whose base radius is 7cm and height is 24 cm. Find the area of the sheet required to make 10 such caps.",
-      "timestamp": 1789120887.645361,
+      "query": "Evaluate log_2 512 and log_10 0.01.",
+      "timestamp": 1792053697.8794622,
       "lang": "en"
     },
     {
-      "query": "Exercise 1.1, Question 2: Use division algorithm to show that any positive odd integer is of the form 6q + 1, or 6q + 3 or 6q + 5, where q is some integer.",
-      "timestamp": 1789120877.0499449,
+      "query": "Evaluate log_2 512 and log_10 0.01",
+      "timestamp": 1792051184.5181835,
       "lang": "en"
     },
     {
-      "query": "Exercise 8.1, Question 4: Prove that a line drawn through the mid-point of one side of a triangle parallel to another side bisects the third side (Using basic proportionality theorem).",
-      "timestamp": 1789119761.413738,
+      "query": "Evaluate 2 tan^2 45 + cos^2 30 - sin^2 60",
+      "timestamp": 1792051166.2525122,
       "lang": "en"
     },
     {
-      "query": "Exercise 1.1, Question 4: Use division algorithm to show that the cube of any positive integer is of the form 9 m, 9m + 1 or 9m + 8.",
-      "timestamp": 1789119745.887806,
+      "query": "If A = {1, 2, 3, 4, 5} and B = {4, 5, 6, 7}, find A U B and A ∩ B",
+      "timestamp": 1792051166.181339,
       "lang": "en"
     },
     {
-      "query": "Exercise 1.1, Question 4: Use division algorithm to show that the cube of any positive integer is of the form 9 m, 9m + 1 or 9m + 8.",
-      "timestamp": 1789119739.0270865,
+      "query": "Determine the value of log_5 (1/625)",
+      "timestamp": 1792051166.1626446,
       "lang": "en"
     },
     {
-      "query": "Exercise 1.1, Question 1: Use Euclid's algorithm to find the HCF of (i) 900 and 270 (ii) 196 and 38220 (iii) 1651 and 2032",
-      "timestamp": 1789119721.832566,
+      "query": "Evaluate log_2 512 and log_10 0.01",
+      "timestamp": 1792051166.0786133,
       "lang": "en"
     },
     {
-      "query": "Can you find the HCF of 1.2 and 0.12 by using Euclid division algorithm? Justify your\nanswer.",
-      "timestamp": 1789119480.6090388,
+      "query": "Evaluate log_2 512 and log_10 0.01",
+      "timestamp": 1792050886.0881777,
       "lang": "en"
     },
     {
-      "query": "find hcf of 900 and 270",
-      "timestamp": 1789119442.5247693,
+      "query": "Evaluate log_2 512 and log_10 0.01.",
+      "timestamp": 1792048280.8761942,
       "lang": "en"
     },
     {
-      "query": "Can you find the HCF of 1.2 and 0.12 by using Euclid division algorithm? Justify your answer.",
-      "timestamp": 1789119155.8511145,
+      "query": "Use division algorithm to show that any positive odd integer is of the form 6 q + 1,\nor 6q + 3 or 6q + 5, where q is some integer.",
+      "timestamp": 1792048255.441113,
       "lang": "en"
     },
     {
-      "query": "find hcf of 900 and 270",
-      "timestamp": 1789117747.3236735,
+      "query": "Solve 2x + 7 = 19",
+      "timestamp": 1792047455.9840565,
       "lang": "en"
     },
     {
-      "query": "Real Numbers - Exercise 1.1, Question 1",
-      "timestamp": 1789112820.6234455,
+      "query": "Use division algorithm to show that any positive odd integer is of the form 6 q + 1, or 6q + 3 or 6q + 5, where q is some integer.",
+      "timestamp": 1792047455.9696374,
       "lang": "en"
     },
     {
-      "query": "Real Numbers - Exercise 1.1, Question 3",
-      "timestamp": 1789112811.5518093,
+      "query": "Exercise 2.1, Question 5: Write the following sets in roster form. (i) B = { x : x is a natural number smaller than 6} (ii) C = { x : x is a two-digit natural number such that the sum of its digits is 8}. (iii) D = { x : x is a prime number which is a divisor of 60}. (iv) E = { x : x is an alphabet in BETTER}.",
+      "timestamp": 1791907137.478104,
       "lang": "en"
     },
     {
-      "query": "Real Numbers - Exercise 1.1, Question 2",
-      "timestamp": 1789112805.398981,
+      "query": "Exercise 2.1, Question 2: If A={0, 2, 4, 6}, B = {3, 5, 7} and C = {p, q, r}, then fill the appropriate symbol,  or  in the blanks. (i) 0 ….. A (ii) 3 ….. C (iii) 4 ….. B (iv) 8 ….. A (v) p ….. C (vi) 7 ….. B",
+      "timestamp": 1791907118.2895956,
       "lang": "en"
     },
     {
-      "query": "Real Numbers - Exercise 1.1, Question 2",
-      "timestamp": 1789112800.288992,
+      "query": "Exercise 2.1, Question 3: Express the following statements using symbols. (i) The element ‘ x’ does not belong to ‘A ’. (ii) ‘d’ is an element of the set ‘B’. (iii) ‘1’ belongs to the set of Natural numbers. (iv) ‘8’ does not belong to the set of prime numbers P.",
+      "timestamp": 1791907111.376165,
       "lang": "en"
     },
     {
-      "query": "Real Numbers - Exercise 1.1, Question 2",
-      "timestamp": 1789112790.2882898,
+      "query": "Exercise 2.1, Question 2: If A={0, 2, 4, 6}, B = {3, 5, 7} and C = {p, q, r}, then fill the appropriate symbol,  or  in the blanks. (i) 0 ….. A (ii) 3 ….. C (iii) 4 ….. B (iv) 8 ….. A (v) p ….. C (vi) 7 ….. B",
+      "timestamp": 1791907103.4076934,
       "lang": "en"
     },
     {
-      "query": "Real Numbers - Exercise 1.1, Question 1",
-      "timestamp": 1789112780.7868102,
+      "query": "Exercise 2.1, Question 1: Which of the following are sets? Justify your answer. (i) The collection of all the months of a year begining with the letter “J”. (ii) The collection of ten most talented writers of India. (iii) A team of eleven best cricket batsmen of the world. (iv) The collection of all boys in your class. (v) The collection of all even integers.",
+      "timestamp": 1791907096.4134529,
       "lang": "en"
     },
     {
-      "query": "Can you find the HCF of 1.2 and 0.12 by using Euclid division algorithm? Justify your\nanswer",
-      "timestamp": 1789112636.7332404,
+      "query": "Exercise 2.1, Question 2: If A={0, 2, 4, 6}, B = {3, 5, 7} and C = {p, q, r}, then fill the appropriate symbol,  or  in the blanks. (i) 0 ….. A (ii) 3 ….. C (iii) 4 ….. B (iv) 8 ….. A (v) p ….. C (vi) 7 ….. B",
+      "timestamp": 1791907080.6276264,
       "lang": "en"
     },
     {
-      "query": "Can you find the HCF of 1.2 and 0.12 by using Euclid division algorithm? Justify your\nanswer",
-      "timestamp": 1789112633.9012895,
+      "query": "Exercise 2.1, Question 1: Which of the following are sets? Justify your answer. (i) The collection of all the months of a year begining with the letter “J”. (ii) The collection of ten most talented writers of India. (iii) A team of eleven best cricket batsmen of the world. (iv) The collection of all boys in your class. (v) The collection of all even integers.",
+      "timestamp": 1791907075.3696158,
       "lang": "en"
     },
     {
-      "query": "Can you find the HCF of 1.2 and 0.12 by using Euclid division algorithm? Justify your\nanswer",
-      "timestamp": 1789112631.330018,
+      "query": "Exercise 2.1, Question 2: If A={0, 2, 4, 6}, B = {3, 5, 7} and C = {p, q, r}, then fill the appropriate symbol,  or  in the blanks. (i) 0 ….. A (ii) 3 ….. C (iii) 4 ….. B (iv) 8 ….. A (v) p ….. C (vi) 7 ….. B",
+      "timestamp": 1791907059.6689813,
       "lang": "en"
     },
     {
-      "query": "Can you find the HCF of 1.2 and 0.12 by using Euclid division algorithm? Justify your\nanswer",
-      "timestamp": 1789112627.8173199,
+      "query": "Exercise 2.1, Question 6: Write the following sets in the set-builder form. (i) {3, 6, 9, 12} (ii) {2, 4, 8, 16, 32} (iii) {5, 25, 125, 625} (iv) {1, 4, 9, 16, 25, ….. 100}",
+      "timestamp": 1791907049.6190193,
       "lang": "en"
     }
   ],
